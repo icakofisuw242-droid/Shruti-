@@ -24,12 +24,11 @@
         button { border: none; background: transparent; cursor: pointer; }
 
         /* === 🛠️ FONT FIX FOR STYLISH SYMBOLS 🛠️ === */
-        /* Special class to protect Unicode characters from breaking */
         .stylish-text {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-            letter-spacing: normal !important; /* Spacing todti hai characters ko, isliye normal */
-            text-transform: none !important; /* Uppercase symbols ko bigadta hai */
-            font-weight: 400 !important; /* Bold karne se symbol overlap karte hain */
+            letter-spacing: normal !important; 
+            text-transform: none !important; 
+            font-weight: 400 !important; 
             line-height: 1.5;
         }
 
@@ -134,26 +133,20 @@
 </head>
 <body>
 
-    <!-- Cute Custom Cursor -->
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
 
-    <!-- Preloader Screen -->
     <div id="intro">
-        <!-- .stylish-text class added here for safety -->
-        <div class="intro-text stylish-text">𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</div>
+        <div class="intro-text stylish-text">𝁤⃬𝆬විh៵᎑𖾓ᛧ ࣺ𓂃</div>
         
         <button class="click-me-btn" onclick="startPortfolio()">
-            Enter <span class="stylish-text" style="font-size: 1.3rem;">𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</span> 🌸
+            Enter <span class="stylish-text" style="font-size: 1.3rem;">𝁤⃬𝆬විh៵᎑𖾓ᛧ ࣺ𓂃</span> 🌸
         </button>
     </div>
 
-    <!-- Pink Canvas Particles -->
     <canvas id="bg-canvas"></canvas>
-    <!-- Cute Falling Stars -->
     <div class="v-lines" id="v-lines"></div>
 
-    <!-- Main Content -->
     <div id="main-content">
         <header>
             <div class="logo">Shruti ✨</div>
@@ -163,24 +156,20 @@
         </header>
 
         <section class="glass-card">
-            <!-- Profile Picture -->
             <div class="profile-img-container">
                 <img src="https://files.catbox.moe/40qwsd.jpg" alt="Shruti" class="profile-img">
             </div>
             
-            <!-- .stylish-text class added to Name for safety -->
-            <h1 class="stylish-text">𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</h1>
+            <h1 class="stylish-text">𝁤⃬𝆬විh៵᎑𖾓ᛧ ࣺ𓂃</h1>
             
             <div class="role-wrapper">
                 I am a <span id="typing-role"></span><span class="cursor">|</span>
             </div>
 
-            <!-- Cute Bio -->
             <p class="about-text">
                 Welcome to my aesthetic space! 🌸 I love creating, deploying, and managing awesome bots. Step in to explore my digital world filled with cuteness, music, and perfect vibes. ✨
             </p>
             
-            <!-- Telegram Links -->
             <div class="social-container">
                 <a href="https://t.me/Shruti_queeen" target="_blank" class="social-btn">
                     <i class="fa-brands fa-telegram"></i> ID
@@ -204,7 +193,6 @@
         </footer>
     </div>
 
-    <!-- M4A Music File -->
     <audio id="bg-music" loop preload="auto">
         <source src="https://files.catbox.moe/giosa4.m4a" type="audio/mp4">
     </audio>
