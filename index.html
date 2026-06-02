@@ -10,10 +10,10 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
         
-        /* ORIGINAL DARK & NEON BACKGROUND */
         body { 
-            background: #0f0c29; 
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+            /* NEW PREMIUM GOLD/DARK THEME BACKGROUND */
+            background: #0f0f12; 
+            background: linear-gradient(135deg, #1f1d2b 0%, #111116 100%); 
             color: #fff; 
             display: flex; 
             justify-content: center; 
@@ -23,7 +23,7 @@
             position: relative;
         }
 
-        /* --- ORIGINAL ANIMATED BUBBLES --- */
+        /* --- STYLISH BACKGROUND ANIMATION (Floating particles) --- */
         .bg-bubbles {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -33,89 +33,95 @@
             position: absolute;
             list-style: none;
             display: block;
-            width: 40px; height: 40px;
-            background-color: rgba(255, 255, 255, 0.05);
+            width: 20px; height: 20px;
+            /* White with very low opacity */
+            background-color: rgba(255, 255, 255, 0.03);
             bottom: -160px;
             border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+            /* Goldish glow for premium look */
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
             animation: floatUp 25s infinite linear;
         }
-        .bg-bubbles li:nth-child(1) { left: 10%; }
-        .bg-bubbles li:nth-child(2) { left: 20%; width: 80px; height: 80px; animation-delay: 2s; animation-duration: 17s; }
+        
+        /* Bubble variations */
+        .bg-bubbles li:nth-child(1) { left: 10%; width: 30px; height: 30px; animation-duration: 20s;}
+        .bg-bubbles li:nth-child(2) { left: 20%; width: 50px; height: 50px; animation-delay: 2s; animation-duration: 17s; }
         .bg-bubbles li:nth-child(3) { left: 25%; animation-delay: 4s; }
-        /* Pink glow bubbles */
-        .bg-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 22s; background-color: rgba(255, 0, 85, 0.05); box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);}
+        .bg-bubbles li:nth-child(4) { left: 40%; width: 40px; height: 40px; animation-duration: 22s; background-color: rgba(212, 175, 55, 0.03); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);}
         .bg-bubbles li:nth-child(5) { left: 70%; }
-        .bg-bubbles li:nth-child(6) { left: 80%; width: 120px; height: 120px; animation-delay: 3s; background-color: rgba(255, 0, 85, 0.05); box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);}
-        .bg-bubbles li:nth-child(7) { left: 32%; width: 160px; height: 160px; animation-delay: 7s; }
+        .bg-bubbles li:nth-child(6) { left: 80%; width: 80px; height: 80px; animation-delay: 3s; background-color: rgba(212, 175, 55, 0.03); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);}
+        .bg-bubbles li:nth-child(7) { left: 32%; width: 100px; height: 100px; animation-delay: 7s; }
         .bg-bubbles li:nth-child(8) { left: 55%; width: 20px; height: 20px; animation-delay: 15s; animation-duration: 40s; }
-        .bg-bubbles li:nth-child(9) { left: 25%; width: 10px; height: 10px; animation-delay: 2s; animation-duration: 40s; background-color: rgba(255, 255, 255, 0.1);}
-        .bg-bubbles li:nth-child(10) { left: 90%; width: 160px; height: 160px; animation-delay: 11s; }
+        .bg-bubbles li:nth-child(9) { left: 25%; width: 10px; height: 10px; animation-delay: 2s; animation-duration: 40s; background-color: rgba(255, 255, 255, 0.05);}
+        .bg-bubbles li:nth-child(10) { left: 90%; width: 90px; height: 90px; animation-delay: 11s; }
 
         @keyframes floatUp {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 50%; }
             100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 30%; }
         }
 
-        /* --- ORIGINAL CARD DESIGN --- */
+        /* --- CARD DESIGN --- */
         .card { 
-            width: 90%; max-width: 400px; 
-            background: rgba(20, 20, 20, 0.6); 
+            width: 90%; max-width: 380px; 
+            /* Darker glassmorphism */
+            background: rgba(10, 10, 10, 0.7); 
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             padding: 40px 30px; border-radius: 25px; 
-            text-align: center; border: 1px solid rgba(255,255,255,0.1); 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+            text-align: center; 
+            /* Subtle Gold border */
+            border: 1px solid rgba(212, 175, 55, 0.2); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7); 
             z-index: 1; 
         }
         
-        /* ORIGINAL PROFILE PIC (Cyan & Pink Hover) */
+        /* Profile Pic with Gold Border/Glow */
         .profile-pic { 
-            width: 130px; height: 130px; 
+            width: 140px; height: 140px; 
             border-radius: 50%; 
-            border: 3px solid #00f2fe; 
-            margin-bottom: 15px; 
-            transition: 0.4s; 
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.3); 
+            border: 3px solid #d4af37; /* Premium Gold */
+            margin-bottom: 20px; 
+            transition: 0.5s; 
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); 
             object-fit: cover;
         }
-        .profile-pic:hover { 
-            transform: scale(1.05); 
-            box-shadow: 0 0 30px rgba(255, 0, 85, 0.5); 
-            border-color: #ff0055;
-        }
+        .profile-pic:hover { transform: scale(1.05) rotate(5deg); box-shadow: 0 0 35px rgba(212, 175, 55, 0.6); border-color: #f5d565;}
         
-        h1 { font-size: 26px; font-weight: 700; margin-bottom: 5px; color: #fff; }
-        p { font-size: 14px; color: #aaa; margin-bottom: 25px; }
+        h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #f5d565; /* Lighter Gold text */}
+        p { font-size: 14px; color: #bbb; margin-bottom: 30px; letter-spacing: 1px;}
         
-        /* ORIGINAL BUTTONS STYLE */
-        .btn-container { display: flex; flex-direction: column; gap: 12px; }
+        /* Button list layout (one below another) */
+        .btn-list { display: flex; flex-direction: column; gap: 15px; }
         .btn { 
             display: flex; align-items: center; justify-content: center; gap: 10px; 
-            padding: 14px; border-radius: 12px; 
+            padding: 16px; border-radius: 50px; /* Round buttons */
             text-decoration: none; color: white; 
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            font-size: 15px; 
-            transition: 0.3s; 
-        }
-        .btn:hover { 
-            transform: translateY(-3px); 
-            border-color: #00f2fe; /* Changed hover border to cyan to match theme */
-            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
-            color: #00f2fe;
+            /* Dark button background */
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            font-size: 15px; font-weight: 400;
+            transition: 0.3s all ease-in-out; 
         }
         
-        /* Music indicator matching the theme */
+        /* Gold Hover effect for buttons */
+        .btn:hover { 
+            transform: translateY(-3px); 
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37; 
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+            color: #f5d565;
+        }
+
+        /* Visual indicator for music */
         .music-notif {
             margin-top: 25px;
             font-size: 12px;
-            color: #aaa;
+            color: #888;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
         }
-        .music-notif i { color: #00f2fe; animation: pulse 1.5s infinite; }
+        .music-notif i { color: #d4af37; animation: pulse 1.5s infinite; }
 
         @keyframes pulse {
             0% { opacity: 0.5; }
@@ -127,7 +133,7 @@
 </head>
 <body>
 
-    <!-- Animated Background Bubbles (Original style) -->
+    <!-- Animated Background Bubbles -->
     <ul class="bg-bubbles">
         <li></li><li></li><li></li><li></li><li></li>
         <li></li><li></li><li></li><li></li><li></li>
@@ -135,14 +141,14 @@
 
     <!-- Main Card -->
     <div class="card">
-        <!-- Shruti's Profile Pic -->
+        <!-- New Profile Picture -->
         <img src="https://files.catbox.moe/40qwsd.jpg" class="profile-pic" alt="Profile">
         
-        <!-- Shruti's Name -->
+        <!-- New Stylized Name -->
         <h1>වි𖣃̵៵᎑𖾓ᛧ ࣺ</h1>
         <p>Telegram ID & Bot Hub</p>
         
-        <div class="btn-container">
+        <div class="btn-list">
             <!-- Telegram ID Button -->
             <a href="https://t.me/Shruti_queeen" target="_blank" class="btn">
                 <i class="fa-brands fa-telegram"></i> Telegram ID
@@ -154,12 +160,12 @@
             </a>
         </div>
         
-        <!-- Music Indicator -->
+        <!-- Music status indicator -->
         <div class="music-notif">
-            <i class="fa-solid fa-music"></i> Background music playing
+            <i class="fa-solid fa-music"></i> Background music playing...
         </div>
         
-        <!-- Shruti's Music -->
+        <!-- New Music Source without showing the player -->
         <audio id="bg-music" autoplay loop>
             <source src="https://files.catbox.moe/pee8cu.mp3" type="audio/mpeg">
         </audio>
@@ -169,15 +175,21 @@
     <script>
         window.onload = function() {
             let music = document.getElementById("bg-music");
-            music.volume = 0.6;
             
+            // Set volume a bit lower for better user experience
+            music.volume = 0.6;
+
+            // Try to play immediately on load
             let playPromise = music.play();
             
             if (playPromise !== undefined) {
                 playPromise.catch(error => {
-                    // Agar browser autoplay block kare
+                    // Agar browser autoplay block kare (jo aksar hota hai), toh pehle interaction par music on hoga
+                    console.log("Autoplay blocked. waiting for user interaction.");
+                    
                     const startMusic = function() {
                         music.play();
+                        // Remove listeners after first successful play
                         document.body.removeEventListener('click', startMusic);
                         document.body.removeEventListener('touchstart', startMusic);
                     };
