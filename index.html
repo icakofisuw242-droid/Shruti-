@@ -3,202 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shruti 🦋 | Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Shruti 🦋 | Cute Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
-        
-        body { 
-            /* NEW PREMIUM GOLD/DARK THEME BACKGROUND */
-            background: #0f0f12; 
-            background: linear-gradient(135deg, #1f1d2b 0%, #111116 100%); 
-            color: #fff; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            overflow: hidden; 
-            position: relative;
+        /* === CUTE & PREMIUM SETUP === */
+        :root {
+            --cute-pink: #ff6699; 
+            --deep-pink: #d81b60;
+            --text-dark: #6a1b41;
+            --bg-gradient: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            --glass: rgba(255, 255, 255, 0.45); 
+            --shadow: 0 10px 30px rgba(255, 105, 180, 0.3); 
         }
 
-        /* --- STYLISH BACKGROUND ANIMATION (Floating particles) --- */
-        .bg-bubbles {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 0;
-        }
-        .bg-bubbles li {
-            position: absolute;
-            list-style: none;
-            display: block;
-            width: 20px; height: 20px;
-            /* White with very low opacity */
-            background-color: rgba(255, 255, 255, 0.03);
-            bottom: -160px;
-            border-radius: 50%;
-            /* Goldish glow for premium look */
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-            animation: floatUp 25s infinite linear;
-        }
-        
-        /* Bubble variations */
-        .bg-bubbles li:nth-child(1) { left: 10%; width: 30px; height: 30px; animation-duration: 20s;}
-        .bg-bubbles li:nth-child(2) { left: 20%; width: 50px; height: 50px; animation-delay: 2s; animation-duration: 17s; }
-        .bg-bubbles li:nth-child(3) { left: 25%; animation-delay: 4s; }
-        .bg-bubbles li:nth-child(4) { left: 40%; width: 40px; height: 40px; animation-duration: 22s; background-color: rgba(212, 175, 55, 0.03); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);}
-        .bg-bubbles li:nth-child(5) { left: 70%; }
-        .bg-bubbles li:nth-child(6) { left: 80%; width: 80px; height: 80px; animation-delay: 3s; background-color: rgba(212, 175, 55, 0.03); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);}
-        .bg-bubbles li:nth-child(7) { left: 32%; width: 100px; height: 100px; animation-delay: 7s; }
-        .bg-bubbles li:nth-child(8) { left: 55%; width: 20px; height: 20px; animation-delay: 15s; animation-duration: 40s; }
-        .bg-bubbles li:nth-child(9) { left: 25%; width: 10px; height: 10px; animation-delay: 2s; animation-duration: 40s; background-color: rgba(255, 255, 255, 0.05);}
-        .bg-bubbles li:nth-child(10) { left: 90%; width: 90px; height: 90px; animation-delay: 11s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; cursor: none; }
+        body { background: var(--bg-gradient); color: var(--text-dark); overflow: hidden; height: 100vh; position: relative; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; background: transparent; cursor: pointer; }
 
-        @keyframes floatUp {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 50%; }
-            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 30%; }
+        /* === PRELOADER / INTRO (Soft Pink Theme) === */
+        #intro { position: fixed; inset: 0; background: var(--bg-gradient); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.8s ease-out; }
+        #intro.fade-out { opacity: 0; pointer-events: none; }
+        
+        .intro-text { font-size: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 5px; color: #fff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); animation: soft-pulse 2s infinite alternate; margin-bottom: 25px; text-align: center;}
+        
+        .click-me-btn { padding: 15px 40px; border: 2px solid #fff; border-radius: 50px; color: #fff; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; box-shadow: 0 0 15px rgba(255,255,255,0.5); position: relative; overflow: hidden; transition: 0.4s; }
+        .click-me-btn:hover { background: #fff; color: var(--cute-pink); box-shadow: 0 0 25px #fff; transform: scale(1.05); }
+
+        @keyframes soft-pulse {
+            from { transform: scale(1); text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            to { transform: scale(1.05); text-shadow: 0 0 25px rgba(255, 255, 255, 1); }
         }
 
-        /* --- CARD DESIGN --- */
-        .card { 
-            width: 90%; max-width: 380px; 
-            /* Darker glassmorphism */
-            background: rgba(10, 10, 10, 0.7); 
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 40px 30px; border-radius: 25px; 
-            text-align: center; 
-            /* Subtle Gold border */
-            border: 1px solid rgba(212, 175, 55, 0.2); 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7); 
-            z-index: 1; 
-        }
+        /* === BACKGROUND EFFECTS (Pink Canvas & Falling Stars) === */
+        #bg-canvas { position: fixed; inset: 0; z-index: -2; opacity: 0.7; }
+        .v-lines { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+        .v-lines span { position: absolute; top: -10%; width: 2px; height: 15px; border-radius: 5px; background: rgba(255, 255, 255, 0.8); box-shadow: 0 0 10px #fff; animation: fall linear infinite; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(20deg); opacity: 0;} }
+
+        /* === MAIN CONTENT === */
+        #main-content { display: none; padding: 20px; opacity: 0; transition: opacity 1s ease-in; position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column; overflow-y: auto; align-items: center; scrollbar-width: none; }
+        #main-content::-webkit-scrollbar { display: none; }
+
+        /* === HEADER === */
+        header { width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.6rem; font-weight: 800; letter-spacing: 2px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.8); }
         
-        /* Profile Pic with Gold Border/Glow */
-        .profile-pic { 
-            width: 140px; height: 140px; 
-            border-radius: 50%; 
-            border: 3px solid #d4af37; /* Premium Gold */
-            margin-bottom: 20px; 
-            transition: 0.5s; 
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); 
-            object-fit: cover;
-        }
-        .profile-pic:hover { transform: scale(1.05) rotate(5deg); box-shadow: 0 0 35px rgba(212, 175, 55, 0.6); border-color: #f5d565;}
+        .nav-btn { color: var(--deep-pink); background: rgba(255,255,255,0.6); text-transform: uppercase; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; padding: 8px 20px; border-radius: 30px; transition: 0.3s; box-shadow: 0 5px 15px rgba(255,105,180,0.2); border: 2px solid #fff; }
+        .nav-btn:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,105,180,0.4); }
+
+        /* === PROFILE CARD (Frosted Glass) === */
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.7); border-radius: 40px; padding: 50px; width: 100%; max-width: 550px; text-align: center; margin: 30px 0; position: relative; box-shadow: var(--shadow); transform: translateY(20px); transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .glass-card:hover { transform: translateY(0) scale(1.02); box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4); }
+
+        .profile-img-container { position: relative; width: 150px; height: 150px; margin: 0 auto 25px; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 20px rgba(255,105,180,0.5); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .profile-img-container:hover .profile-img { transform: rotate(-5deg) scale(1.1); box-shadow: 0 0 30px rgba(255,105,180,0.8); }
         
-        h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #f5d565; /* Lighter Gold text */}
-        p { font-size: 14px; color: #bbb; margin-bottom: 30px; letter-spacing: 1px;}
+        /* Cute rotating dashed border */
+        .profile-img-container::after { content: ''; position: absolute; inset: -12px; border: 2px dashed #fff; border-radius: 50%; animation: rotate-dashed 15s linear infinite; }
+        @keyframes rotate-dashed { to { transform: rotate(360deg); } }
+
+        /* === TEXT & ANIMATIONS === */
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px; color: var(--deep-pink); }
         
-        /* Button list layout (one below another) */
-        .btn-list { display: flex; flex-direction: column; gap: 15px; }
-        .btn { 
-            display: flex; align-items: center; justify-content: center; gap: 10px; 
-            padding: 16px; border-radius: 50px; /* Round buttons */
-            text-decoration: none; color: white; 
-            /* Dark button background */
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            font-size: 15px; font-weight: 400;
-            transition: 0.3s all ease-in-out; 
-        }
+        .role-wrapper { font-size: 1.1rem; font-weight: 600; color: #880e4f; height: 30px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; gap: 8px; opacity: 0.9;}
+        #typing-role { color: var(--cute-pink); font-weight: 800; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .cursor { display: inline-block; width: 2px; background-color: var(--deep-pink); animation: blink 0.7s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .about-text { font-size: 0.95rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 35px; text-align: center; padding: 0 10px; font-weight: 600; opacity: 0.85; }
+
+        /* === SOCIAL BUTTONS === */
+        .social-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: rgba(255,255,255,0.7); border: 2px solid #fff; padding: 12px 25px; border-radius: 30px; color: var(--deep-pink); font-size: 1rem; font-weight: 600; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 5px 15px rgba(255,105,180,0.15); }
+        .social-btn i { font-size: 1.3rem; }
         
-        /* Gold Hover effect for buttons */
-        .btn:hover { 
-            transform: translateY(-3px); 
-            background: rgba(212, 175, 55, 0.1);
-            border-color: #d4af37; 
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
-            color: #f5d565;
+        .social-btn:hover { transform: translateY(-5px) scale(1.05); background: #fff; box-shadow: 0 10px 25px rgba(255,105,180,0.3); color: var(--cute-pink); }
+
+        /* === SOUND BUTTON === */
+        .ctl-buttons { display: flex; justify-content: center; margin-top: 10px; }
+        .sound-btn { background: var(--cute-pink); color: #fff; font-size: 0.9rem; font-weight: 600; border: 2px solid #fff; padding: 12px 30px; border-radius: 40px; transition: 0.3s; display: flex; align-items: center; gap: 8px; box-shadow: 0 5px 15px rgba(255,105,180,0.4); animation: cute-bounce 2s infinite; }
+        .sound-btn:hover { background: #fff; color: var(--cute-pink); animation: none; transform: scale(1.05); }
+        
+        @keyframes cute-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
-        /* Visual indicator for music */
-        .music-notif {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #888;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-        .music-notif i { color: #d4af37; animation: pulse 1.5s infinite; }
+        /* === FOOTER === */
+        footer { width: 100%; max-width: 1200px; text-align: center; padding: 30px 0; color: #fff; font-size: 0.85rem; font-weight: 600; margin-top: auto; }
+        .foot-username { color: rgba(255,255,255,0.8); margin-top: 5px; letter-spacing: 1px;}
 
-        @keyframes pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 768px) {
+            .logo { font-size: 1.3rem; }
+            .glass-card { padding: 30px 20px; width: 95%; }
+            .profile-img-container { width: 130px; height: 130px; }
+            h1 { font-size: 1.8rem; }
+            .role-wrapper { font-size: 0.95rem; }
+            .about-text { font-size: 0.85rem; }
+            .social-btn { padding: 10px 15px; font-size: 0.9rem; }
         }
 
+        /* === CUSTOM CUTE CURSOR === */
+        #cursor-dot { width: 10px; height: 10px; background-color: var(--cute-pink); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease; box-shadow: 0 0 10px var(--cute-pink); }
+        #cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(255, 102, 153, 0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); transition: transform 0.15s ease-out; }
+        body:active #cursor-dot { width: 15px; height: 15px; background-color: #fff; }
+        body:active #cursor-outline { width: 30px; height: 30px; background-color: rgba(255, 102, 153, 0.2); border-color: transparent;}
     </style>
 </head>
 <body>
 
-    <!-- Animated Background Bubbles -->
-    <ul class="bg-bubbles">
-        <li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li>
-    </ul>
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
 
-    <!-- Main Card -->
-    <div class="card">
-        <!-- New Profile Picture -->
-        <img src="https://files.catbox.moe/40qwsd.jpg" class="profile-pic" alt="Profile">
-        
-        <!-- New Stylized Name -->
-        <h1>වි𖣃̵៵᎑𖾓ᛧ ࣺ</h1>
-        <p>Telegram ID & Bot Hub</p>
-        
-        <div class="btn-list">
-            <!-- Telegram ID Button -->
-            <a href="https://t.me/Shruti_queeen" target="_blank" class="btn">
-                <i class="fa-brands fa-telegram"></i> Telegram ID
-            </a>
-            
-            <!-- Channel Button -->
-            <a href="https://t.me/Shurti_bots" target="_blank" class="btn">
-                <i class="fa-solid fa-robot"></i> Bot Channel
-            </a>
-        </div>
-        
-        <!-- Music status indicator -->
-        <div class="music-notif">
-            <i class="fa-solid fa-music"></i> Background music playing...
-        </div>
-        
-        <!-- New Music Source without showing the player -->
-        <audio id="bg-music" autoplay loop>
-            <source src="https://files.catbox.moe/pee8cu.mp3" type="audio/mpeg">
-        </audio>
+    <div id="intro">
+        <div class="intro-text">𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</div>
+        <button class="click-me-btn" onclick="startPortfolio()">Enter My World ✨</button>
     </div>
 
-    <!-- Script to enforce autoplay -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="v-lines" id="v-lines"></div>
+
+    <div id="main-content">
+        <header>
+            <div class="logo">Shruti ✨</div>
+            <div class="nav-links">
+                <a href="https://t.me/Shurti_bots" target="_blank" class="nav-btn">Bot Channel 🌸</a>
+            </div>
+        </header>
+
+        <section class="glass-card">
+            <div class="profile-img-container">
+                <img src="https://files.catbox.moe/40qwsd.jpg" alt="Shruti" class="profile-img">
+            </div>
+            
+            <h1>𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</h1>
+            
+            <div class="role-wrapper">
+                I am a <span id="typing-role"></span><span class="cursor">|</span>
+            </div>
+
+            <p class="about-text">
+                Welcome to my aesthetic space! 🌸 I love creating, deploying, and managing awesome bots. Step in to explore my digital world filled with cuteness, music, and perfect vibes. ✨
+            </p>
+            
+            <div class="social-container">
+                <a href="https://t.me/Shruti_queeen" target="_blank" class="social-btn">
+                    <i class="fa-brands fa-telegram"></i> ID
+                </a>
+                <a href="https://t.me/Shurti_bots" target="_blank" class="social-btn">
+                    <i class="fa-solid fa-robot"></i> Bots
+                </a>
+            </div>
+            
+            <div class="ctl-buttons">
+                <button id="sound-btn" class="sound-btn" onclick="toggleMusic()">
+                    <i id="sound-icon" class="fas fa-music"></i>
+                    <span id="sound-text">Play Music 🎶</span>
+                </button>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Shruti ✨ All Rights Reserved.</p>
+            <p class="foot-username">@Shruti_queeen</p>
+        </footer>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://files.catbox.moe/pee8cu.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        window.onload = function() {
-            let music = document.getElementById("bg-music");
-            
-            // Set volume a bit lower for better user experience
-            music.volume = 0.6;
+        // JS Configuration with cute roles
+        const roles = [
+            "Bot Developer ✨",
+            "Music Lover 🎶",
+            "Aesthetic Girl 🦋",
+            "Telegram Creator 🌸"
+        ];
+        const typingSpeed = 100; 
+        const erasingSpeed = 50; 
+        const newTextDelay = 2000; 
+        
+        const intro = document.getElementById('intro');
+        const mainContent = document.getElementById('main-content');
+        const bgMusic = document.getElementById('bg-music');
+        const soundBtnText = document.getElementById('sound-text');
+        const soundBtnIcon = document.getElementById('sound-icon');
+        const typingRole = document.getElementById('typing-role');
+        const vLinesContainer = document.getElementById('v-lines');
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isMusicPlaying = false;
 
-            // Try to play immediately on load
-            let playPromise = music.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    // Agar browser autoplay block kare (jo aksar hota hai), toh pehle interaction par music on hoga
-                    console.log("Autoplay blocked. waiting for user interaction.");
-                    
-                    const startMusic = function() {
-                        music.play();
-                        // Remove listeners after first successful play
-                        document.body.removeEventListener('click', startMusic);
-                        document.body.removeEventListener('touchstart', startMusic);
-                    };
+        window.addEventListener('load', () => {
+            createVerticalLines(25);
+            initParticleBackground();
+            initCustomCursor();
+        });
 
-                    document.body.addEventListener('click', startMusic);
-                    document.body.addEventListener('touchstart', startMusic);
-                });
+        // Intro Button Logic (Plays music legally on interaction)
+        function startPortfolio() {
+            intro.classList.add('fade-out');
+            setTimeout(() => {
+                intro.style.display = 'none';
+                mainContent.style.display = 'flex';
+                requestAnimationFrame(() => mainContent.style.opacity = '1');
+                
+                playMusic();
+                setTimeout(typeRole, newTextDelay / 2);
+            }, 800);
+        }
+
+        function playMusic() {
+            bgMusic.volume = 0.6; // Soft volume
+            bgMusic.play().then(() => {
+                isMusicPlaying = true;
+                updateSoundButton();
+            }).catch(error => {
+                console.log("Autoplay blocked:", error);
+                isMusicPlaying = false;
+                updateSoundButton();
+            });
+        }
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                isMusicPlaying = false;
+            } else {
+                bgMusic.play();
+                isMusicPlaying = true;
             }
-        };
+            updateSoundButton();
+        }
+
+        function updateSoundButton() {
+            if (isMusicPlaying) {
+                soundBtnIcon.className = "fas fa-pause";
+                soundBtnText.innerText = "Pause Music 🤫";
+            } else {
+                soundBtnIcon.className = "fas fa-music";
+                soundBtnText.innerText = "Play Music 🎶";
+            }
+        }
+
+        // Typing Effect
+        function typeRole() {
+            if (charIndex < roles[roleIndex].length) {
+                typingRole.textContent += roles[roleIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeRole, typingSpeed);
+            } else {
+                setTimeout(eraseRole, newTextDelay);
+            }
+        }
+
+        function eraseRole() {
+            if (charIndex > 0) {
+                typingRole.textContent = roles[roleIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseRole, erasingSpeed);
+            } else {
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeRole, typingSpeed + 500);
+            }
+        }
+
+        // Falling Stars (Replaced Vertical Lines)
+        function createVerticalLines(count) {
+            for (let i = 0; i < count; i++) {
+                const line = document.createElement('span');
+                line.style.left = Math.random() * 100 + 'vw';
+                line.style.animationDuration = (Math.random() * 3 + 3) + 's'; 
+                line.style.animationDelay = Math.random() * 5 + 's';
+                line.style.opacity = Math.random() * 0.8 + 0.2; 
+                vLinesContainer.appendChild(line);
+            }
+        }
+
+        // Pink/White Canvas Particles
+        function initParticleBackground() {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            let particles = [];
+            let width, height;
+
+            const resize = () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            };
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = (Math.random() - 0.5) * 0.6;
+                    this.speedY = (Math.random() - 0.5) * 0.6;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    if (this.x > width) this.x = 0;
+                    else if (this.x < 0) this.x = width;
+                    if (this.y > height) this.y = 0;
+                    else if (this.y < 0) this.y = height;
+                }
+                draw() {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            const createParticles = () => {
+                const particleCount = Math.floor((width * height) / 12000); 
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            };
+            createParticles();
+            window.addEventListener('resize', createParticles);
+
+            const connectParticles = () => {
+                const maxDistance = 120;
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        const dx = particles[a].x - particles[b].x;
+                        const dy = particles[a].y - particles[b].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < maxDistance) {
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 * (1 - distance / maxDistance)})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            };
+
+            const animate = () => {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                connectParticles();
+                requestAnimationFrame(animate);
+            };
+            animate();
+        }
+
+        // Custom Mouse Cursor Logic
+        function initCustomCursor() {
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                cursorDot.style.left = posX + 'px';
+                cursorDot.style.top = posY + 'px';
+                
+                cursorOutline.animate({
+                    left: posX + 'px',
+                    top: posY + 'px'
+                }, { duration: 500, fill: "forwards" });
+            });
+            
+            const interactables = document.querySelectorAll('a, button, .profile-img-container');
+            interactables.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorOutline.style.width = '60px';
+                    cursorOutline.style.height = '60px';
+                    cursorOutline.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                    cursorDot.style.width = '4px';
+                    cursorDot.style.height = '4px';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorOutline.style.width = '40px';
+                    cursorOutline.style.height = '40px';
+                    cursorOutline.style.backgroundColor = 'transparent';
+                    cursorDot.style.width = '10px';
+                    cursorDot.style.height = '10px';
+                });
+            });
+        }
     </script>
 </body>
 </html>
