@@ -27,9 +27,10 @@
         #intro { position: fixed; inset: 0; background: var(--bg-gradient); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.8s ease-out; }
         #intro.fade-out { opacity: 0; pointer-events: none; }
         
-        .intro-text { font-size: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 5px; color: #fff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); animation: soft-pulse 2s infinite alternate; margin-bottom: 25px; text-align: center;}
+        .intro-text { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #fff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); animation: soft-pulse 2s infinite alternate; margin-bottom: 25px; text-align: center;}
         
-        .click-me-btn { padding: 15px 40px; border: 2px solid #fff; border-radius: 50px; color: #fff; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; box-shadow: 0 0 15px rgba(255,255,255,0.5); position: relative; overflow: hidden; transition: 0.4s; }
+        /* Stylish Button Update */
+        .click-me-btn { padding: 15px 40px; border: 2px solid #fff; border-radius: 50px; color: #fff; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); font-size: 1.2rem; letter-spacing: 1px; font-weight: 600; box-shadow: 0 0 15px rgba(255,255,255,0.5); position: relative; overflow: hidden; transition: 0.4s; }
         .click-me-btn:hover { background: #fff; color: var(--cute-pink); box-shadow: 0 0 25px #fff; transform: scale(1.05); }
 
         @keyframes soft-pulse {
@@ -117,17 +118,24 @@
 </head>
 <body>
 
+    <!-- Cute Custom Cursor -->
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
 
+    <!-- Preloader Screen -->
     <div id="intro">
+        <!-- New Name in Preloader -->
         <div class="intro-text">𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</div>
-        <button class="click-me-btn" onclick="startPortfolio()">Enter My World ✨</button>
+        <!-- Stylish Button -->
+        <button class="click-me-btn" onclick="startPortfolio()">Enter 𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃 ✨</button>
     </div>
 
+    <!-- Pink Canvas Particles -->
     <canvas id="bg-canvas"></canvas>
+    <!-- Cute Falling Stars -->
     <div class="v-lines" id="v-lines"></div>
 
+    <!-- Main Content -->
     <div id="main-content">
         <header>
             <div class="logo">Shruti ✨</div>
@@ -137,20 +145,24 @@
         </header>
 
         <section class="glass-card">
+            <!-- Profile Picture -->
             <div class="profile-img-container">
                 <img src="https://files.catbox.moe/40qwsd.jpg" alt="Shruti" class="profile-img">
             </div>
             
+            <!-- Main Title Name -->
             <h1>𝁤⃬𝆬වි𖣃̵៵᎑𖾓ᛧ ࣺ𓂃</h1>
             
             <div class="role-wrapper">
                 I am a <span id="typing-role"></span><span class="cursor">|</span>
             </div>
 
+            <!-- Cute Bio -->
             <p class="about-text">
                 Welcome to my aesthetic space! 🌸 I love creating, deploying, and managing awesome bots. Step in to explore my digital world filled with cuteness, music, and perfect vibes. ✨
             </p>
             
+            <!-- Telegram Links -->
             <div class="social-container">
                 <a href="https://t.me/Shruti_queeen" target="_blank" class="social-btn">
                     <i class="fa-brands fa-telegram"></i> ID
@@ -174,8 +186,9 @@
         </footer>
     </div>
 
+    <!-- New M4A Music File Linked Here -->
     <audio id="bg-music" loop preload="auto">
-        <source src="https://files.catbox.moe/pee8cu.mp3" type="audio/mpeg">
+        <source src="https://files.catbox.moe/giosa4.m4a" type="audio/mp4">
     </audio>
 
     <script>
