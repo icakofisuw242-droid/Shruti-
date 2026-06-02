@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shruti 🦋 | Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        
+        body { 
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+            position: relative;
+            background-color: #08080a; /* Base dark color */
+        }
+
+        /* =========================================
+           --- NEW PREMIUM MESH BACKGROUND ---
+           ========================================= */
+        .premium-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            background: 
+                /* Base dark gradient */
+                linear-gradient(135deg, #111116 0%, #08080a 100%);
+            overflow: hidden;
+        }
+
+        /* Moving Gradient Blobs */
+        .mesh-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: meshMove 20s infinite alternate ease-in-out;
+            will-change: transform, opacity;
+        }
+
+        /* Blob 1: Deep Gold/Bronze */
+        .blob1 {
+            top: -10%; left: -10%;
+            width: 600px; height: 600px;
+            background: #b59410;
+            animation-duration: 25s;
+        }
+
+        /* Blob 2: Very Subtle Dark Purple (gives depth) */
+        .blob2 {
+            bottom: -20%; right: -10%;
+            width: 500px; height: 500px;
+            background: #2d1b4a;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        /* Blob 3: Accent Gold near center */
+        .blob3 {
+            top: 40%; left: 50%;
+            width: 300px; height: 300px;
+            background: #d4af37;
+            opacity: 0.1;
+            animation-duration: 15s;
+            animation-delay: -2s;
+        }
+
+        /* Floating Light Streaks (Alternative to bubbles) */
+        .light-streaks {
+            position: absolute;
+            width: 100%; height: 100%;
+        }
+        .streak {
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.8) 50%, rgba(212, 175, 55, 0) 100%);
+            width: 1px;
+            height: 150px;
+            top: -200px;
+            opacity: 0;
+            animation: streakFall 10s infinite linear;
+        }
+
+        /* Streak Positions & Timings */
+        .streak:nth-child(1) { left: 15%; animation-delay: 0s; animation-duration: 8s; }
+        .streak:nth-child(2) { left: 40%; animation-delay: 2s; animation-duration: 12s; height: 200px;}
+        .streak:nth-child(3) { left: 60%; animation-delay: 5s; animation-duration: 9s; opacity: 0.3; }
+        .streak:nth-child(4) { left: 85%; animation-delay: 7s; animation-duration: 11s; }
+
+        /* Animations */
+        @keyframes meshMove {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.1; }
+            50% { transform: translate(5%, 10%) scale(1.1) rotate(5deg); opacity: 0.2; }
+            100% { transform: translate(-5%, -5%) scale(1) rotate(-5deg); opacity: 0.1; }
+        }
+
+        @keyframes streakFall {
+            0% { top: -200px; opacity: 0; transform: translateY(0); }
+            30% { opacity: 0.5; }
+            70% { opacity: 0.5; }
+            100% { top: 100%; opacity: 0; transform: translateY(100px); }
+        }
+
+        /* =========================================
+           --- CARD DESIGN (Kept same) ---
+           ========================================= */
+        .card { 
+            width: 90%; max-width: 380px; 
+            background: rgba(10, 10, 10, 0.75); /* Slightly darker for better contrast */
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            padding: 40px 30px; border-radius: 25px; 
+            text-align: center; 
+            border: 1px solid rgba(212, 175, 55, 0.25); /* Subtle Gold border */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8); 
+            z-index: 1; 
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Profile Pic with Gold Border/Glow */
+        .profile-pic { 
+            width: 140px; height: 140px; 
+            border-radius: 50%; 
+            border: 3px solid #d4af37; /* Premium Gold */
+            margin-bottom: 20px; 
+            transition: 0.5s; 
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); 
+            object-fit: cover;
+        }
+        .profile-pic:hover { transform: scale(1.05) rotate(5deg); box-shadow: 0 0 40px rgba(212, 175, 55, 0.7); border-color: #f5d565;}
+        
+        h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #f5d565; /* Lighter Gold text */}
+        p { font-size: 14px; color: #bbb; margin-bottom: 30px; letter-spacing: 1px;}
+        
+        /* Button list layout */
+        .btn-list { display: flex; flex-direction: column; gap: 15px; }
+        .btn { 
+            display: flex; align-items: center; justify-content: center; gap: 10px; 
+            padding: 16px; border-radius: 50px; /* Round buttons */
+            text-decoration: none; color: white; 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            font-size: 15px; font-weight: 400;
+            transition: 0.3s all ease-in-out; 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Gold Hover effect for buttons */
+        .btn:hover { 
+            transform: translateY(-3px); 
+            background: rgba(212, 175, 55, 0.15);
+            border-color: #d4af37; 
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            color: #f5d565;
+        }
+
+        /* Shine effect on button hover */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -100%;
+            width: 50%; height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            transition: none;
+        }
+        .btn:hover::after {
+            animation: btnShine 1s single;
+        }
+
+        @keyframes btnShine {
+            100% { left: 150%; }
+        }
+
+        /* Visual indicator for music */
+        .music-notif {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .music-notif i { color: #d4af37; animation: pulse 1.5s infinite; }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- =========================================
+         --- NEW PREMIUM BACKGROUND ELEMENTS ---
+         ========================================= -->
+    <div class="premium-bg">
+        <!-- Moving Mesh Blobs -->
+        <div class="mesh-blob blob1"></div>
+        <div class="mesh-blob blob2"></div>
+        <div class="mesh-blob blob3"></div>
+
+        <!-- Floating Light Streaks -->
+        <div class="light-streaks">
+            <div class="streak"></div>
+            <div class="streak"></div>
+            <div class="streak"></div>
+            <div class="streak"></div>
+        </div>
+    </div>
+
+    <!-- Main Card (Content remains same) -->
+    <div class="card">
+        <img src="https://files.catbox.moe/40qwsd.jpg" class="profile-pic" alt="Profile">
+        
+        <h1>වි𖣃̵៵᎑𖾓ᛧ ࣺ</h1>
+        <p>Telegram ID & Bot Hub</p>
+        
+        <div class="btn-list">
+            <a href="https://t.me/Shruti_queeen" target="_blank" class="btn">
+                <i class="fa-brands fa-telegram"></i> Telegram ID
+            </a>
+            
+            <a href="https://t.me/Shurti_bots" target="_blank" class="btn">
+                <i class="fa-solid fa-robot"></i> Bot Channel
+            </a>
+        </div>
+        
+        <div class="music-notif">
+            <i class="fa-solid fa-music"></i> Background music playing...
+        </div>
+        
+        <audio id="bg-music" autoplay loop>
+            <source src="https://files.catbox.moe/pee8cu.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        window.onload = function() {
+            let music = document.getElementById("bg-music");
+            music.volume = 0.6;
+
+            let playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    const startMusic = function() {
+                        music.play();
+                        document.body.removeEventListener('click', startMusic);
+                        document.body.removeEventListener('touchstart', startMusic);
+                    };
+                    document.body.addEventListener('click', startMusic);
+                    document.body.addEventListener('touchstart', startMusic);
+                });
+            }
+        };
+    </script>
+</body>
+</html>
